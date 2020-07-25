@@ -47,9 +47,11 @@ I used 2 hidden layers.
 
 # Activation Functions
 
-* 1st Hidden Layer: _relu_
+* 1st Hidden Layer: _leaky relu_
 
-* 2nd Hidden Layer: _elu_
+* 2nd Hidden Layer: _relu_
+
+* Output Layer: _elu_
 
 # Loss Function
 

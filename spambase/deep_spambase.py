@@ -26,7 +26,7 @@ biases_1 = tf.get_variable(name='biases_1', shape=[hidden_layer_size1],
                             regularizer=tf.keras.regularizers.l2(0.01) )
 
 # Defining activation function of 1st layer.
-layer_1 = tf.nn.relu(tf.matmul(inputs, weights_1) + biases_1)
+layer_1 = tf.nn.leaky_relu(tf.matmul(inputs, weights_1) + biases_1)
 
 # Defining output of 1st layer.
 outputs_1 = tf.nn.dropout(layer_1, rate=0.1)
@@ -37,7 +37,7 @@ weights_2 = tf.get_variable(name='weights_2', shape=[hidden_layer_size1, hidden_
 biases_2 = tf.get_variable(name='biases_2', shape=[hidden_layer_size2],
                             initializer=tf.initializers.glorot_normal,
                             regularizer=tf.keras.regularizers.l1_l2(l1=0.01, l2=0.01) )
-layer_2 = tf.nn.elu(tf.matmul(outputs_1, weights_2) + biases_2)
+layer_2 = tf.nn.relu(tf.matmul(outputs_1, weights_2) + biases_2)
 outputs_2 = tf.nn.dropout(layer_2, rate=0.1)
 
 weights_3 = tf.get_variable(name='weights_3', shape=[hidden_layer_size2, output_size],
@@ -47,7 +47,7 @@ biases_3 = tf.get_variable(name='biases_3', shape=[output_size],
                             initializer=tf.initializers.glorot_normal,
                             regularizer=tf.keras.regularizers.l2(0.01) )
 
-outputs = tf.matmul(outputs_2, weights_3) + biases_3
+outputs = tf.nn.elu(tf.matmul(outputs_2, weights_3) + biases_3)
 
 # Selecting loss function.
 loss_func = tf.losses.huber_loss(labels=targets, predictions=outputs)

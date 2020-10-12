@@ -20,26 +20,47 @@ The architecture of my CNN consists of:
 
 # Results.
 Epoch 1/10
+
 938/938 [==============================] - 486s 518ms/step - loss: 2.5568 - accuracy: 0.9327 - val_loss: 1.3332 - val_accuracy: 0.9654
+
 Epoch 2/10
+
 938/938 [==============================] - 638s 680ms/step - loss: 1.1360 - accuracy: 0.9673 - val_loss: 1.1533 - val_accuracy: 0.9834
+
 Epoch 3/10
+
 938/938 [==============================] - 648s 691ms/step - loss: 0.9754 - accuracy: 0.9744 - val_loss: 0.8854 - val_accuracy: 0.9840
+
 Epoch 4/10
+
 938/938 [==============================] - 587s 626ms/step - loss: 0.8727 - accuracy: 0.9777 - val_loss: 0.7965 - val_accuracy: 0.9890
+
 Epoch 5/10
+
 938/938 [==============================] - 512s 546ms/step - loss: 0.7879 - accuracy: 0.9807 - val_loss: 0.7583 - val_accuracy: 0.9906
+
 Epoch 6/10
+
 938/938 [==============================] - 472s 503ms/step - loss: 0.7209 - accuracy: 0.9822 - val_loss: 0.6124 - val_accuracy: 0.9936
+
 Epoch 7/10
+
 938/938 [==============================] - 482s 514ms/step - loss: 0.6659 - accuracy: 0.9839 - val_loss: 0.6854 - val_accuracy: 0.9916
+
 Epoch 8/10
+
 938/938 [==============================] - 467s 498ms/step - loss: 0.6305 - accuracy: 0.9856 - val_loss: 0.6540 - val_accuracy: 0.9890
+
 Epoch 9/10
+
 938/938 [==============================] - 492s 525ms/step - loss: 0.5825 - accuracy: 0.9862 - val_loss: 0.5511 - val_accuracy: 0.9939
+
 Epoch 10/10
+
 938/938 [==============================] - 466s 496ms/step - loss: 0.5568 - accuracy: 0.9872 - val_loss: 0.5081 - val_accuracy: 0.9931
 
 Test Loss: 0.5094171166419983
+
 Test Accuracy: 0.9922999739646912
 
+![image](https://github.com/kochlisGit/Deep-Learning/blob/master/MNIST/training_loss.png)

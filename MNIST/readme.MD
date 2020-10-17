@@ -59,8 +59,8 @@ Epoch 10/10
 
 938/938 [==============================] - 466s 496ms/step - loss: 0.5568 - accuracy: 0.9872 - val_loss: 0.5081 - val_accuracy: 0.9931
 
-Test Loss: 0.5094171166419983
+Test Loss: 0.46450069546699524
 
-Test Accuracy: 0.9922999739646912
+Test Accuracy: 0.993399977684021
 
 ![image](https://github.com/kochlisGit/Deep-Learning/blob/master/MNIST/training_loss.png)

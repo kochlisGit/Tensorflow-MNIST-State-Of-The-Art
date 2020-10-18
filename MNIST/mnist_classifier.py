@@ -3,6 +3,7 @@ from keras.utils import np_utils
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Conv2D, BatchNormalization
 from keras.optimizers import Adam
+from keras.callbacks import ModelCheckpoint, EarlyStopping
 from sklearn.metrics import classification_report, confusion_matrix
 import numpy as np
 import matplotlib.pyplot as plt
@@ -103,13 +104,27 @@ model.compile(
 )
 print( model.summary() )
 
-# Training the model.
+# Training parameters of the model.
 batch_size = 64
-epochs = 10
+epochs = 20
+
+# Applying early stopping methods.
+checkpoint = ModelCheckpoint(filepath='mnist_cnn_callback.h5',
+                             monitor='val_loss',
+                             mode='min',
+                             save_best_only=True,
+                             verbose=1)
+early_stopping = EarlyStopping(monitor='val_loss',
+                               min_delta=0,
+                               patience=3,
+                               verbose=1,
+                               restore_best_weights=True)
+
+callbacks = [checkpoint, early_stopping]
 
 history = model.fit(
     x=train_inputs, y=train_targets, batch_size=batch_size, epochs=epochs, verbose=1,
-    sample_weight=None, validation_data=(test_inputs, test_targets)
+    sample_weight=None, callbacks=callbacks, validation_data=(test_inputs, test_targets)
 )
 
 # Testing model's accuracy.
@@ -120,10 +135,10 @@ print('Test Accuracy:', test_accuracy)
 
 # Plotting Training, Validation loss.
 history_dict = history.history
-epoch_steps = range(1, epochs+1)
 
 train_loss = history_dict['loss']
 valid_loss = history_dict['val_loss']
+epoch_steps = range(1, len(train_loss)+1)
 plt.plot(epoch_steps, train_loss, label='Training Loss')
 plt.plot(epoch_steps, valid_loss, label='Validation Loss')
 plt.xlabel('Epochs')

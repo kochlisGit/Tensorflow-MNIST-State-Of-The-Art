@@ -18,7 +18,7 @@ The architecture of my CNN consists of:
 - Final Conv2D: (filters=128, kernel_size=4, stride=1, padding=none, 'Xavier' initializer, 'relu' activation, regularizer=l1)
 - Final Dense: (units=10, activation='softmax', 'Xavier' initializer, regularizer=None)
 
-# Accuracy per Epoch.
+# Training History
     Epoch 1/10
     938/938 [==============================] - 486s 518ms/step - loss: 2.5568 - accuracy: 0.9327 - val_loss: 1.3332 - val_accuracy: 0.9654
     Epoch 2/10
@@ -64,7 +64,7 @@ The architecture of my CNN consists of:
     macro avg          0.99      0.99      0.99     10000
     weighted avg       0.99      0.99      0.99     10000
 
-      0     1    2    3    4    5    6    7    8    9
+          0     1    2    3    4    5    6    7    8    9
 
     0 [[ 974    0    0    0    0    0    3    2    1    0]
     1  [   0 1131    0    1    1    1    1    0    0    0]

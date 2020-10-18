@@ -1,12 +1,12 @@
-import keras
 from keras.datasets import mnist
 from keras.utils import np_utils
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Conv2D, BatchNormalization
 from keras.optimizers import Adam
+from sklearn.metrics import classification_report, confusion_matrix
 import numpy as np
-import random as rand
 import matplotlib.pyplot as plt
+import pickle
 
 # Loading the training data, test data.
 (train_inputs, train_targets), (test_inputs, test_targets) = mnist.load_data()
@@ -80,7 +80,7 @@ model.add( Dropout(rate=0.4) )
 
 model.add(
     Conv2D(
-        filters=128, kernel_size=4, strides=2, padding='valid',
+        filters=128, kernel_size=4, strides=1, padding='valid',
         activation='relu', kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
         kernel_regularizer='l1', bias_regularizer='l1'
     )
@@ -109,7 +109,7 @@ epochs = 10
 
 history = model.fit(
     x=train_inputs, y=train_targets, batch_size=batch_size, epochs=epochs, verbose=1,
-    sample_weight=None, validation_data=(train_inputs, train_targets)
+    sample_weight=None, validation_data=(test_inputs, test_targets)
 )
 
 # Testing model's accuracy.
@@ -132,4 +132,18 @@ plt.legend()
 plt.show()
 
 # Saving the model.
-model.save('mnist_cnn.h5')
+model.save('MNIST_cnn.h5')
+
+# Saving the History.
+pickle_file = open('MNIST_history.pickle', 'wb')
+pickle.dump(history_dict, pickle_file)
+pickle_file.close()
+
+# Printing classifier's accuracy.
+targets_pred = np.argmax(model.predict(test_inputs), axis=1)
+targets_actual = np.argmax(test_targets, axis=1)
+
+print(targets_pred[0], targets_actual[0])
+
+print( classification_report(targets_actual, targets_pred) )
+print( confusion_matrix(targets_actual, targets_pred) )

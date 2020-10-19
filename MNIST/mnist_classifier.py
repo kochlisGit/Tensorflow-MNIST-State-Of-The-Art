@@ -1,7 +1,7 @@
 from keras.datasets import mnist
 from keras.utils import np_utils
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten, Conv2D, BatchNormalization
+from keras.layers import Dense, Dropout, Flatten, Conv2D, BatchNormalization, Activation
 from keras.optimizers import Adam
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 from sklearn.metrics import classification_report, confusion_matrix
@@ -30,63 +30,70 @@ model = Sequential()
 model.add(
     Conv2D(
         filters=32, kernel_size=3, strides=1, padding='valid',
-        activation='relu', kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
+        activation=None, kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
         kernel_regularizer=None, bias_regularizer=None, input_shape=(rows, cols, 1)
     )
 )
 model.add( BatchNormalization() )
+model.add( Activation('relu') )
 model.add(
     Conv2D(
         filters=32, kernel_size=3, strides=1, padding='valid',
-        activation='relu', kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
+        activation=None, kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
         kernel_regularizer=None, bias_regularizer=None
     )
 )
 model.add( BatchNormalization() )
+model.add( Activation('relu') )
 model.add(
     Conv2D(
         filters=32, kernel_size=5, strides=2, padding='same',
-        activation='relu', kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
+        activation=None, kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
         kernel_regularizer=None, bias_regularizer=None
     )
 )
 model.add( BatchNormalization() )
+model.add( Activation('relu') )
 model.add( Dropout(rate=0.4) )
 
 model.add(
     Conv2D(
         filters=64, kernel_size=3, strides=1, padding='valid',
-        activation='relu', kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
+        activation=None, kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
         kernel_regularizer=None, bias_regularizer=None
     )
 )
 model.add( BatchNormalization() )
+model.add( Activation('relu') )
 model.add(
     Conv2D(
         filters=64, kernel_size=3, strides=1, padding='valid',
-        activation='relu', kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
+        activation=None, kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
         kernel_regularizer=None, bias_regularizer=None
     )
 )
 model.add( BatchNormalization() )
+model.add( Activation('relu') )
 model.add(
     Conv2D(
         filters=64, kernel_size=5, strides=2, padding='same',
-        activation='relu', kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
+        activation=None, kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
         kernel_regularizer=None, bias_regularizer=None
     )
 )
 model.add( BatchNormalization() )
+model.add( Activation('relu') )
 model.add( Dropout(rate=0.4) )
 
 model.add(
     Conv2D(
         filters=128, kernel_size=4, strides=1, padding='valid',
-        activation='relu', kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
+        activation=None, kernel_initializer='glorot_uniform', bias_initializer='glorot_uniform',
         kernel_regularizer='l1', bias_regularizer='l1'
     )
 )
 model.add( BatchNormalization() )
+model.add( Activation('relu') )
 model.add( Flatten() )
 
 # Adding the final output layer.

@@ -7,6 +7,7 @@ This model is an improvement of the original LeNet-5 model. Features:
 * Reguralization Layers (Batch Normalization, Dropouts)
 * Yogi Optimizer (An improved version of Adam optimizer: https://proceedings.neurips.cc/paper/2018/file/90365351ccc7437a1309dc64e4db32a3-Paper.pdf)
 * Output noise with Label Smoothing (https://arxiv.org/pdf/2011.12562.pdf)
+* Early Stopping Mechanism
 
 # Model Architecture
 

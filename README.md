@@ -31,8 +31,8 @@ This model is an improvement of the original LeNet-5 model. Features:
 | 7     | Flatten              |  (None, 512)         | 204928  |
 | 8     | Dense(10)            |  (None, 10)          | 5130    |
                                                             
-=================================================================
-Total params: 403,722
-Trainable params: 403,338
-Non-trainable params: 384
-=================================================================
+---------------------------------------------------------------------------------
+
+* Total params: 403,722
+* Trainable params: 403,338
+* Non-trainable params: 384

@@ -1,4 +1,4 @@
-# Tensorflow-State-of-the-Art-Neural-Networks
+# Tensorflow-MNIST CNN
 Building High Performance Convolutional Neural Networks with TensorFlow
 
 # Model Description

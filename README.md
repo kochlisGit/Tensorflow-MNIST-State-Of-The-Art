@@ -11,6 +11,7 @@ This model is an improvement of the original LeNet-5 model. Features:
 * Early Stopping Mechanism
 * Learning Rate Decay
 * Weight Decay
+* UMAP - Dimension Reduction
 
 # Model Architecture
 
@@ -36,3 +37,7 @@ This model is an improvement of the original LeNet-5 model. Features:
 | 8     | Dense(10)            |  (None, 10)          | 5130    |
                                                             
 ---------------------------------------------------------------------------------
+
+# Additional Algorithms:
+1. UMAP - KNN
+2. Ensemble (CNN + UMAP - KNN)

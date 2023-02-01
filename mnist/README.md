@@ -6,8 +6,11 @@ This model is an improvement of the original LeNet-5 model. Features:
 * Image Sub-sampling with Convolutional (CNN) Layers
 * Reguralization Layers (Batch Normalization, Dropouts)
 * Yogi Optimizer (An improved version of Adam optimizer: https://proceedings.neurips.cc/paper/2018/file/90365351ccc7437a1309dc64e4db32a3-Paper.pdf)
+* AdaBelief + LookAhead Optimizer (State of the Art Adam extension optimizer: https://arxiv.org/abs/2010.07468)
 * Output noise with Label Smoothing (https://arxiv.org/pdf/2011.12562.pdf)
 * Early Stopping Mechanism
+* Learning Rate Decay
+* Weight Decay
 
 # Model Architecture
 

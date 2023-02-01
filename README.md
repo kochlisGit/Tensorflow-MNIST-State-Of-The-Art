@@ -41,3 +41,12 @@ This model is an improvement of the original LeNet-5 model. Features:
 # Additional Algorithms:
 1. UMAP - KNN
 2. Ensemble (CNN + UMAP - KNN)
+
+# Results
+
+| Algorithm                   | Accuracy         |
+| ----------------------------|------------------|
+| UMAP + KNN                  | 0.9595           |
+| CNN (Yogi)                  | 0.9956           |
+| CNN (AdaBelief) + LookAhead | 0.9963           |
+| Ensemble (CNN + UMAP -KNN)  | 0.9596           |
